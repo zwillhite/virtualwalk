@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Jameson Camp Virtual Walk</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="headerwrapper">
+		<div class="topbar">
+			<div class="loginformwrapper">
+				<div class="loginform">
+					<form id="loginForm" name="loginForm" method="post" action="">
+						<label for="email_address">Email Address</label><input type="text" name="email_address" id="email_address" tabindex="1" />
+						<label for="password">Password</label><input type="password" name="password" id="password" tabindex="2" />
+						<input type="submit" id="loginFormSubmit" name="loginFormSubmit" value="Login" class="loginformbutton" tabindex="3" />
+						
+						<a style="color: #FFFFFF;" href="registration/">Signup Today!</a>					
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo">
+				<h1><a href="index.html">Jameson Camp Virtual Walk</a></h1>
+			</div>
+			<div class="topnavigation">
+				<ul>
+					<li><a href="Home">Home</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="secondaryheader">
+			&nbsp;
+		</div>
+	</div>
+	<div class="page">
+		<%= yield %>
+	</div>
+	<div class="footer">
+		Jameson Camp Virtual Walk Copyright &copy; 2013.
+	</div>
+</body>
+</html>
+
+

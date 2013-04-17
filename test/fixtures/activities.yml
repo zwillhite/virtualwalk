@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  distance: 9.99
+  activity_date: 2013-04-13 10:43:42
+  manual: false
+  event_id: 1
+  user_id: 1
+
+two:
+  distance: 9.99
+  activity_date: 2013-04-13 10:43:42
+  manual: false
+  event_id: 1
+  user_id: 1

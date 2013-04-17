@@ -1,0 +1,217 @@
+/*Main Styles*/
+body {
+	background-color: #CED8F6;
+	color: #000000;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background: url('/assets/background.jpg') 0 0 repeat-x;
+}
+
+label {
+	color: #151515;
+	font-size: 14px;
+}
+
+h1 {
+	color: #0A122A;
+	font-size: 22px;
+	margin: 0px;
+	padding: 0px;
+}
+
+h2 {
+	color: #0B173B;
+	font-size: 18px;
+	margin: 0px;
+	padding-top: 10px;
+	text-indent: 5px;
+}
+
+h3 {
+	color: #084B8A;
+	font-size: 14px;
+}
+
+p .clear {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+	/*IE Fix*/
+	height: 0;
+}
+
+.errortext
+{
+	color: #DF0101;
+}
+/*End Main Styles*/
+
+/*Header Styles*/
+.headerwrapper {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;	
+}
+
+.topbar {
+	width: 100%;
+	height: 35px;
+	background-image: url('/assets/topbar.png');
+	background-repeat: repeat-x;
+}
+
+/*Login Styles*/
+.loginformwrapper {
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.loginform {
+	float: right;
+	width: 670px;
+	height: 28px;
+	padding-top: 5px;
+	text-align: right;
+}
+
+.loginform label {
+	color: #E6E6E6;
+	font-size: 11px;
+	margin-left: 6px;
+	margin-right: 3px;
+}
+
+.loginform input {
+	width: 125px;
+	font-size: 11px;
+}
+
+.loginform .loginformbutton {
+	width: 70px;
+	height: 25px;
+	font-size: 13px;
+}
+/*End Login Styles*/
+
+.header  {
+	width: 960px;
+	height: 65px;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+}
+
+.logo {
+	float: left;
+	width: 375px;
+	height: 100%;
+	line-height: 65px;
+	text-align: left;
+	text-indent: 65px;
+	background-image: url('/assets/jamesonlogo_small.png');
+	background-repeat: no-repeat;
+}
+
+.logo a, .logo a:hover, .logo a:visited {
+	text-decoration: none;
+	color: #0A122A;
+}
+
+/*Top Navigation Styles*/
+.topnavigation {
+	float: left;
+	width: 585px;
+}
+
+.topnavigation ul {
+	float: right;
+	height: 100%;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.topnavigation li {
+	float: left;
+	width: 100px;
+	height: 100%;
+	line-height: 65px;
+	text-align: center;
+}
+
+.topnavigation a .selected {
+	background-image: url('/assets/menuarrow.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.topnavigation a, .topnavigation a:visited, .topnavigation a:active {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #151515;
+	font-weight: bold;
+}
+
+.topnavigation a:hover {
+	background-image: url('/assets/menuarrow.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	text-decoration: underline;
+}
+
+/*End Navigation Styles*/
+/*End Header Styles*/
+
+/*Secondary Header Styles*/
+.secondaryheader {
+	width: 960px;
+	height: 150px;
+	margin: 0 auto;
+	background-image: url('/assets/road.jpg');
+	background-repeat: no-repeat;
+}
+/*End Secondary Header Styles*/
+
+/*Form Styles*/
+.form {
+	margin-left: 15px;
+	padding-bottom: 15px;
+}
+
+.form label {
+	width: 150px;
+	display: block;
+	padding-bottom: 2px;
+	margin-top: 5px;
+}
+
+/*End Form Styles*/
+
+/*Footer Styles*/
+.footer {
+	width: 950px;
+	height: 50px;
+	margin: 0 auto;
+	background-image: url('/assets/grass.png');
+	color: #E6E6E6;
+	line-height: 50px;
+	padding-left: 10px;
+	font-size: 12px;
+}
+/*End Footer Styles*/
+
+.page {
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	width: 960px;
+	min-height: 300px;
+}
+
+.page p {
+	margin: 0px; 
+	padding: 10px 5px;
+}
