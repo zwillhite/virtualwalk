@@ -1,0 +1,29 @@
+<h1>Registrations</h1>
+
+<table>
+  <tr>
+  	<th>Event</th>
+    <th>Personal Goal</th>
+    <th>Team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registrations.each do |registration| %>
+  <tr>
+  	<td><%= registration.event.event_name %></td>
+    <td><%= registration.personal_goal %></td>
+    <% if registration.team %>
+	  <%= registration.team.name %>
+	<% end %>
+    <td><%= link_to 'Show', registration %></td>
+    <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+    <td><%= link_to 'Destroy', registration, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Registration', new_registration_path %>

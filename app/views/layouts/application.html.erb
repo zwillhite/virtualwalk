@@ -12,13 +12,13 @@
 		<div class="topbar">
 			<div class="loginformwrapper">
 				<div class="loginform">
-					<form id="loginForm" name="loginForm" method="post" action="">
-						<label for="email_address">Email Address</label><input type="text" name="email_address" id="email_address" tabindex="1" />
-						<label for="password">Password</label><input type="password" name="password" id="password" tabindex="2" />
-						<input type="submit" id="loginFormSubmit" name="loginFormSubmit" value="Login" class="loginformbutton" tabindex="3" />
-						
-						<a style="color: #FFFFFF;" href="registration/">Signup Today!</a>					
-					</form>
+				<% if current_user %>
+					<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+					<%= link_to "Logout", logout_path %>
+				<% else %>				
+					<%= link_to "Login", login_path %> |
+					<%= link_to "Register", new_user_path %>
+				<% end %>
 				</div>
 			</div>
 		</div>
@@ -28,7 +28,14 @@
 			</div>
 			<div class="topnavigation">
 				<ul>
-					<li><a href="Home">Home</a></li>
+					<li><%= link_to "Home", root_url %></li>
+					<% if current_user %>
+					<li><%= link_to "Agencies", agencies_path %></li>
+					<li><%= link_to "Sponsors", sponsors_path %></li>
+					<li><%= link_to "Events", events_path %></li>
+					<li><%= link_to "Activities", activities_path %></li>
+					<li><%= link_to "Teams", teams_path %></li>		
+					<% end %>
 				</ul>
 			</div>
 		</div>

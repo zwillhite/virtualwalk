@@ -1,23 +1,25 @@
+<h1>Team Details</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Team name:</b>
+  <b>Team Name:</b>
   <%= @team.team_name %>
 </p>
 
 <p>
-  <b>Team details:</b>
+  <b>Team Details:</b>
   <%= @team.team_details %>
 </p>
 
 <p>
-  <b>Team goal:</b>
+  <b>Team Goal:</b>
   <%= @team.team_goal %>
 </p>
 
 <p>
   <b>Event:</b>
-  <%= @team.event_id %>
+  <%= @team.event.event_name %>
 </p>
 
 

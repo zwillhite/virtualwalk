@@ -1,6 +1,5 @@
 class Activity < ActiveRecord::Base
-  validates :distance, :presence => true
-  validates :activity_date, :presence => true
+  validates :distance, :activity_date, :event, :presence => true
   
   belongs_to :user
   belongs_to :event

@@ -6,8 +6,6 @@
     <th>Last name</th>
     <th>Email</th>
     <th>Username</th>
-    <th>Crypted password</th>
-    <th>Team</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,11 +17,22 @@
     <td><%= user.last_name %></td>
     <td><%= user.email %></td>
     <td><%= user.username %></td>
-    <td><%= user.crypted_password %></td>
-    <td><%= user.team_id %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+		<% if can? :read, user %>
+			<%= link_to 'Show', user %>
+		<% end %>
+	</td>
+    <td>
+		<% if can? :manage, user %>
+			<%= link_to 'Edit', edit_user_path(user) %>
+		<% end %>
+	</td>
+	<td>
+		<% if can? :manage, user %>
+			<%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %>
+		<% end %>
+	</td>
+
   </tr>
 <% end %>
 </table>

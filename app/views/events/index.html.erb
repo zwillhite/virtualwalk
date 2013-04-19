@@ -1,15 +1,13 @@
-<h1>Listing events</h1>
+<h1>Events</h1>
 
 <table>
   <tr>
-    <th>Event name</th>
-    <th>Start date</th>
-    <th>End date</th>
+    <th>Event Name</th>
     <th>Goal</th>
-    <th>Details</th>
-    <th>Logo</th>
-    <th>Agency</th>
+    <th>Start Date</th>
+    <th>End Date</th>
     <th>Sponsor</th>
+    <th>Registered</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,13 +16,17 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= event.event_name %></td>
-    <td><%= event.start_date %></td>
-    <td><%= event.end_date %></td>
-    <td><%= event.goal %></td>
-    <td><%= event.details %></td>
-    <td><%= event.logo %></td>
-    <td><%= event.agency_id %></td>
-    <td><%= event.sponsor_id %></td>
+   	<td><%= event.goal %></td>
+    <td><%= event.start_date.strftime("%m/%d/%y") %></td>
+    <td><%= event.end_date.strftime("%m/%d/%y") %></td>
+    <td><%= event.sponsor.name %></td>
+    <td>
+    	<% if @registrations.include?(event) %>
+    		Registered
+    	<% else%>
+  			<%= link_to "Register!", new_registration_path %>  	
+    	<% end %>
+    </td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>

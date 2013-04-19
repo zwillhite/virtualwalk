@@ -1,23 +1,25 @@
+<h1>Event Details</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Event name:</b>
+  <b>Event Name:</b>
   <%= @event.event_name %>
-</p>
-
-<p>
-  <b>Start date:</b>
-  <%= @event.start_date %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%= @event.end_date %>
 </p>
 
 <p>
   <b>Goal:</b>
   <%= @event.goal %>
+</p>
+
+<p>
+  <b>Start Date:</b>
+  <%= @event.start_date %>
+</p>
+
+<p>
+  <b>End Date:</b>
+  <%= @event.end_date %>
 </p>
 
 <p>
@@ -32,12 +34,12 @@
 
 <p>
   <b>Agency:</b>
-  <%= @event.agency_id %>
+  <%= @event.agency.name %>
 </p>
 
 <p>
   <b>Sponsor:</b>
-  <%= @event.sponsor_id %>
+  <%= @event.sponsor.name %>
 </p>
 
 

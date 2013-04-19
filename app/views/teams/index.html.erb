@@ -1,10 +1,10 @@
-<h1>Listing teams</h1>
+<h1>Teams</h1>
 
 <table>
   <tr>
-    <th>Team name</th>
-    <th>Team details</th>
-    <th>Team goal</th>
+    <th>Team Name</th>
+    <th>Team Details</th>
+    <th>Team Goal</th>
     <th>Event</th>
     <th></th>
     <th></th>
@@ -16,7 +16,7 @@
     <td><%= team.team_name %></td>
     <td><%= team.team_details %></td>
     <td><%= team.team_goal %></td>
-    <td><%= team.event_id %></td>
+    <td><%= team.event.event_name %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>

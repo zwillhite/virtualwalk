@@ -1,0 +1,24 @@
+<h1>Registration Details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @registration.event.event_name %>
+</p>
+
+<p>
+  <b>Personal Goal:</b>
+  <%= @registration.personal_goal %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <% if @registration.team %>
+  <%= @registration.team.name %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>

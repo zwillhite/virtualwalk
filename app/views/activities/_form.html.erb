@@ -12,24 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :event_id %><br />
+    <%= f.collection_select :event_id, current_user.events, :id, :event_name, :prompt => 'Select an Event' %>
+  </div>
+  <div class="field">
     <%= f.label :distance %><br />
     <%= f.text_field :distance %>
   </div>
   <div class="field">
-    <%= f.label :activity_date %><br />
-    <%= f.datetime_select :activity_date %>
+    <%= f.label :activity_date, "Activity Date" %><br />
+    <%= f.date_select :activity_date %>
   </div>
   <div class="field">
-    <%= f.label :manual %><br />
+    <%= f.label :manual, "Enter Time Manually?" %><br />
     <%= f.check_box :manual %>
-  </div>
-  <div class="field">
-    <%= f.label :event_id %><br />
-    <%= f.number_field :event_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

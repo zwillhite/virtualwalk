@@ -1,9 +1,6 @@
 class Team < ActiveRecord::Base
-  validates :team_name, :presence => true
-  validates :team_details, :presence => true
-  validates :team_goal, :presence => true
-  
+  validates :team_name, :team_details, :team_goal, :event, :presence => true 
   
   belongs_to :event
-  has_many :users
+  has_many :users, :through => :event
 end

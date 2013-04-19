@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413175733) do
+ActiveRecord::Schema.define(:version => 20130419012805) do
 
   create_table "activities", :force => true do |t|
     t.decimal  "distance"
@@ -44,10 +44,13 @@ ActiveRecord::Schema.define(:version => 20130413175733) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "registration", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.integer "personal_goal"
+  create_table "registrations", :force => true do |t|
+    t.integer  "personal_goal"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "team_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -77,13 +80,19 @@ ActiveRecord::Schema.define(:version => 20130413175733) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "user_sessions", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "username"
     t.string   "crypted_password"
-    t.integer  "team_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "password_salt"

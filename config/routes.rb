@@ -1,4 +1,10 @@
 VirtualWalk::Application.routes.draw do
+  resources :homes
+
+  resources :user_sessions
+
+  resources :registrations
+
   resources :roles
 
   resources :users
@@ -12,6 +18,11 @@ VirtualWalk::Application.routes.draw do
   resources :activities
 
   resources :agencies
+
+  match 'login' => 'user_sessions#new'
+  match 'logout' => 'user_sessions#destroy'
+  
+  root :to => 'homes#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

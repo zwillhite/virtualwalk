@@ -12,20 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :event_name %><br />
+    <%= f.label :agency_id %><br />
+    <%= f.collection_select :agency_id, Agency.all.collect, :id, :name, :prompt => 'Select an Agency' %>
+  </div>
+  <div class="field">
+    <%= f.label :sponsor_id %><br />
+    <%= f.collection_select :sponsor_id, Sponsor.all.collect, :id, :name, :prompt => 'Select a Sponsor' %>
+  </div>
+  <div class="field">
+    <%= f.label :event_name, "Event Name" %><br />
     <%= f.text_field :event_name %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.datetime_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.datetime_select :end_date %>
   </div>
   <div class="field">
     <%= f.label :goal %><br />
     <%= f.number_field :goal %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date, "Start Date" %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date, "End Date" %><br />
+    <%= f.date_select :end_date %>
   </div>
   <div class="field">
     <%= f.label :details %><br />
@@ -34,14 +42,6 @@
   <div class="field">
     <%= f.label :logo %><br />
     <%= f.text_field :logo %>
-  </div>
-  <div class="field">
-    <%= f.label :agency_id %><br />
-    <%= f.number_field :agency_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sponsor_id %><br />
-    <%= f.number_field :sponsor_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
