@@ -14,15 +14,29 @@
   <tr>
   	<td><%= registration.event.event_name %></td>
     <td><%= registration.personal_goal %></td>
+    <td>
     <% if registration.team %>
-	  <%= registration.team.name %>
+	  <%= registration.team.team_name %>
 	<% end %>
-    <td><%= link_to 'Show', registration %></td>
-    <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-    <td><%= link_to 'Destroy', registration, confirm: 'Are you sure?', method: :delete %></td>
+	</td>
+	<td>
+		<% if can? :read, registration %>
+			<%= link_to 'Show', registration %>
+		<% end %>
+	</td>
+    <td>
+		<% if can? :manage, registration %>
+			<%= link_to 'Edit', edit_registration_path(registration) %>
+		<% end %>
+	</td>
+	<td>
+		<% if can? :manage, registration %>
+			<%= link_to 'Destroy', registration, confirm: 'Are you sure?', method: :delete %>
+		<% end %>
+	</td>
   </tr>
 <% end %>
-</table>
+</table>	
 
 <br />
 

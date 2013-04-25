@@ -7,11 +7,11 @@ class Ability
     if thisuser.has_role? :manager
       can :manage, :all
     elsif thisuser.has_role? :participant
-      can :manage, [ Home, Activity, Agency, Event, Registration, Sponsor, Team ]
+      can :manage, [ Home, Activity, Registration, Agency, Event, Sponsor, Team ]
       can :manage, thisuser
     else
       can :create, User
-      can :read, Home
+      can :read, [ Home, Event]
     end
   end
 end

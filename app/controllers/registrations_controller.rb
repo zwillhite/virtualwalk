@@ -2,7 +2,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
+    @registrations = current_user.registrations
 
     respond_to do |format|
       format.html # index.html.erb

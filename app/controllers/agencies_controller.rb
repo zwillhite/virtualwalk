@@ -41,7 +41,6 @@ class AgenciesController < ApplicationController
   # POST /agencies.json
   def create
     @agency = Agency.new(params[:agency])
-    @agency.user = current_user
 
     respond_to do |format|
       if @agency.save

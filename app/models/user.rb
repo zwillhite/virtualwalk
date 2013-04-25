@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :username, :password, :password_confirmation, :single_access_token, :role_ids
-  validates :first_name, :last_name, :email, :username, :password, :password_confirmation, :presence => true
+  validates :first_name, :last_name, :email, :username, :presence => true
+  validates :password, :password_confirmation, :presence => true, :if => :password_changed?
 
   acts_as_authentic
   

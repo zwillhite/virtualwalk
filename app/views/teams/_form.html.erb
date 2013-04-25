@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :event_id %><br />
-    <%= f.number_field :event_id %>
+    <%= f.collection_select :event_id, Event.all.collect, :id, :event_name, :prompt => 'Select an Event' %>
   </div>
   <div class="actions">
     <%= f.submit %>

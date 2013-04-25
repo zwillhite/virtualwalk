@@ -1,1 +1,30 @@
-<h1>Welcome to the Home Page</h1>
+<div style="float: left; width: 70%">
+<h1>Join Our Virtual Walk!</h1>
+Join us as we raise money for Jameson Camp. The Jameson Camp Virtual Walk allows you to organize your own fundraising event or team or to join an already existing event or team. <br /><br />
+
+For over 80 years, Jameson Camp has been impacting the lives of young people through our award winning,camp experience designed to develop self respect and confidence, and respect for others and the world around us.<br /> <br />
+
+Check out out events page to see all of the future events. <%= link_to "Click here to Register for an Event.", new_user_path %><br /> <br />
+
+Your participation in our Virtual Walk event will help raise vital dollars for impacting the lives of youth. For more about who we are and how we impact youth, please visit our website at <a href="http://www.jamesoncamp.org/mission/">JamesonCamp.org.</a>.
+
+</div>
+
+<div style="float: left; width: 30%">
+	<h3 style="padding-bottom: 0px; margin-bottom: 0px;">Current Events</h3>
+	<table style="width: 100%;">
+	  <tr>
+	    <th></th>
+	    <th>Goal</th>
+	    <th>Current</th>
+	  </tr>
+	
+	<% @events.each do |event| %>
+	  <tr>
+	    <td><%= link_to event.event_name, event_path(event.id) %></td>
+	   	<td><%= event.goal %></td>
+	   	<td><%= event.activities.sum(:distance) %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

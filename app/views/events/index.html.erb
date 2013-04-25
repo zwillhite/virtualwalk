@@ -7,7 +7,9 @@
     <th>Start Date</th>
     <th>End Date</th>
     <th>Sponsor</th>
+    <% if current_user %>
     <th>Registered</th>
+    <% end %>
     <th></th>
     <th></th>
     <th></th>
@@ -20,20 +22,37 @@
     <td><%= event.start_date.strftime("%m/%d/%y") %></td>
     <td><%= event.end_date.strftime("%m/%d/%y") %></td>
     <td><%= event.sponsor.name %></td>
+    <% if current_user %>
     <td>
-    	<% if @registrations.include?(event) %>
-    		Registered
-    	<% else%>
-  			<%= link_to "Register!", new_registration_path %>  	
-    	<% end %>
+	<% if @registrations.include?(event) %>
+		Registered
+	<% else%>
+		<%= link_to "Register!", new_registration_path %>  	
+	<% end %>
     </td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+    <td>
+		<% if can? :read, event %>
+			<%= link_to 'Show', event %>
+		<% end %>
+	</td>
+    <td>
+		<% if can? :manage, event %>
+			<%= link_to 'Edit', edit_event_path(event) %>
+		<% end %>
+	</td>
+	<td>
+		<% if can? :manage, event %>
+			<%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %>
+		<% end %>
+	</td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<% if current_user %>
+	<%= link_to 'New Event', new_event_path %>
+<% end %>
