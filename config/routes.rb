@@ -23,6 +23,18 @@ VirtualWalk::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy'
   
   root :to => 'homes#index'
+  
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do        
+        #API routes
+        match 'users/login', :to => 'users#login'
+        match 'users/validate_token/:token', :to => 'users#validate_token'
+        match 'events/', :to => 'events#index'
+        match 'events/:eventid', :to => 'events#show' 
+        match 'events/:eventid/teams', :to => 'events#teams'   
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

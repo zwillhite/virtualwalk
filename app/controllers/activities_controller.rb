@@ -41,6 +41,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(params[:activity])
+    @activity.user = current_user
 
     respond_to do |format|
       if @activity.save

@@ -20,5 +20,11 @@
   <%= @user.username %>
 </p>
 
+<p>
+  <b>Single Access Token:</b>
+  <%= @user.single_access_token %>
+</p>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
